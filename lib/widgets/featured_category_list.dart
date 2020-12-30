@@ -74,10 +74,10 @@ class _FeaturedCategoryListState extends State<FeaturedCategoryList> with Automa
 //            physics: ClampingScrollPhysics(),
             itemBuilder: (context, index) {
               Map wpPost = snapshot.data[index];
-              var media = wpPost['_embedded']["wp:featuredmedia"];
-              var imageUrl = wpPost['_embedded']["wp:featuredmedia"][0]['source_url'];
-              print(wpPost[index]);
-              return PostCard(wpPost[index],imageUrl, isFeaturedList: true);
+              var media = wpPost['excerpt']["rendered"];
+              var imageUrl = wpPost['_embedded']["wp:featuredmedia"] != '' ? wpPost['_embedded']["wp:featuredmedia"][0]['source_url'] : 0;
+              print('media is here$media');
+              return PostCard(wpPost,imageUrl, isFeaturedList: true);
             },)
           );
           } else {
