@@ -71,3 +71,4 @@ Distributed under the GPL3 license.
 5. Create a new Pull Request
 "# finalWordpress" 
 "# newBlog" 
+"# newBlog" 
