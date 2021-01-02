@@ -1,4 +1,4 @@
-package com.propakistani.wordpress_flutter
+package com.blog.wordpress
 
 import android.os.Bundle
 

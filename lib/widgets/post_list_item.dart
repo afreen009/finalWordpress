@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../model/post_entity.dart';
 import '../pages/post_details.dart';
-import '../widgets/helpers.dart';
+import 'helpers.dart';
+// import '../widgets/helpers.dart';
 
 class PostListItem extends StatelessWidget {
   final PostEntity post;
@@ -11,6 +12,8 @@ class PostListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(post.image);
+    String imageUrl = post.image;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 10.0),
       child: GestureDetector(
@@ -23,11 +26,11 @@ class PostListItem extends StatelessWidget {
               padding: const EdgeInsets.only(right: 14.0),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: CachedImage(
+                child: imageUrl.isNotEmpty ? CachedImage(
                   post.image,
                   width: 100,
                   height: 85,
-                ),
+                ): Center(child:Text('no image')),
               ),
             ),
             Flexible(

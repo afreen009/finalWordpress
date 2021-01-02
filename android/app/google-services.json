@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "841752676172",
+    "project_id": "signcheck-482d2",
+    "storage_bucket": "signcheck-482d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:841752676172:android:43445eaaf2ca71512e31e9",
+        "android_client_info": {
+          "package_name": "com.blog.wordpress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "841752676172-obqcevdnaonudij5i9ep0ea6pagtds1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm-jaSs9JasgD9u_qy7IGfbTrmutNF2PM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "841752676172-obqcevdnaonudij5i9ep0ea6pagtds1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

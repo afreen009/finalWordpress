@@ -1,25 +1,18 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:html/parser.dart';
 
-// import '../model/post_entity.dart';
+import '../model/post_entity.dart';
 import '../pages/post_details.dart';
 import '../widgets/helpers.dart';
 
 class PostCard extends StatelessWidget {
-  final post;
+  PostEntity post;
   bool isFeaturedList;
-  String imageUrl;
-  PostCard(this.post,this.imageUrl, {this.isFeaturedList = false});
   
+  PostCard(this.post, {this.isFeaturedList = false});
+
   @override
   Widget build(BuildContext context) {
-    var media = post['excerpt']["rendered"];
-    List image = [];
-    print('here $post');
-    image.add(imageUrl);
-    print('list $image');
+    print(post);
     Size size = MediaQuery.of(context).size;
     double width = isFeaturedList ? size.width * 0.8 : size.width;
     return GestureDetector(
@@ -39,15 +32,14 @@ class PostCard extends StatelessWidget {
               width: width,
               child: Stack(
                 children: <Widget>[
-                  imageUrl.runtimeType == String ?
                   Hero(
-                    tag: imageUrl,
+                    tag: post.image,
                     child: CachedImage(
-                      imageUrl,
+                      post.image,
                       width: width,
                       height: size.height,
                     ),
-                  ): Text('no Image'),
+                  ),
                   Positioned(
                     right: 0,
                     child: CategoryPill(post: post),
@@ -64,7 +56,7 @@ class PostCard extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.all(3.0),
                               child: Text(
-                                parse((media).toString()).documentElement.text,
+                                post.title,
                                 textAlign: TextAlign.left,
                                 style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18.0),
                               ),
@@ -74,9 +66,9 @@ class PostCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
-                    child: Hero(tag: '', child: Author(post: post)),
-                  )
+                  // Positioned(
+                  //   child: Hero(tag: '${post.id}_author', child: Author(post: post)),
+                  // )
                 ],
               ),
             ),
@@ -93,7 +85,7 @@ class CategoryPill extends StatelessWidget {
     @required this.post,
   }) : super(key: key);
 
-  final  post;
+  final PostEntity post;
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +97,7 @@ class CategoryPill extends StatelessWidget {
           height: 26.0,
           onPressed: () {},
           color: Theme.of(context).primaryColor,
-          child: Text('Festival',
+          child: Text(post.category.toUpperCase(),
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 12.0,
@@ -123,7 +115,7 @@ class Author extends StatelessWidget {
     @required this.post,
   }) : super(key: key);
 
-  final  post;
+  final PostEntity post;
 
   @override
   Widget build(BuildContext context) {
@@ -133,15 +125,15 @@ class Author extends StatelessWidget {
         children: <Widget>[
           ClipRRect(
             borderRadius: BorderRadius.circular(6.0),
-            // child: Image.network(
-            //   post.extra.author[0].avatar,
-            //   height: 26.0,
-            // ),
+            child: Image.network(
+              post.extra.author[0].avatar,
+              height: 26.0,
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 8.0),
             child: Text(
-              post['slug'],
+              post.extra.author[0].name,
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

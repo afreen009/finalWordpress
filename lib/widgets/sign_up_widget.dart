@@ -5,16 +5,13 @@ import 'google_signup_button_widget.dart';
 
 class SignUpWidget extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => Scaffold(
-    backgroundColor: Colors.white,
-      body: Stack(
-          fit: StackFit.expand,
-          children: [
-            CustomPaint(painter: BackgroundPainter()),
-            buildSignUp(),
-          ],
-        ),
-  );
+  Widget build(BuildContext context) => Stack(
+        fit: StackFit.expand,
+        children: [
+          CustomPaint(painter: BackgroundPainter()),
+          buildSignUp(),
+        ],
+      );
 
   Widget buildSignUp() => Column(
         children: [
@@ -25,10 +22,10 @@ class SignUpWidget extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 20),
               width: 175,
               child: Text(
-                'Welcome To My Demo App',
+                'Welcome Back To MyApp',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 31,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -39,7 +36,7 @@ class SignUpWidget extends StatelessWidget {
           SizedBox(height: 12),
           Text(
             'Login to continue',
-            style: TextStyle(fontSize: 16,color: Colors.black),
+            style: TextStyle(fontSize: 16),
           ),
           Spacer(),
         ],

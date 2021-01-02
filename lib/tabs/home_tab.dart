@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wordpress_flutter/tabs/bookworms.dart';
+import 'package:wordpress_flutter/tabs/enginejunkies.dart';
 import 'package:wordpress_flutter/tabs/first.dart';
+import 'package:wordpress_flutter/tabs/insurance.dart';
 class HomeTab extends StatefulWidget{
   @override
   _HomeTabState createState() => _HomeTabState();
@@ -103,9 +106,9 @@ class _HomeTabState extends State<HomeTab> with SingleTickerProviderStateMixin {
                   child: TabBarView(
                     children: [
                       First(),
-                      First(),
-                      First(),
-                      First()
+                      Insurance(),
+                      BookWorms(),
+                      EngineJunkies()
                     ],
                   ),
                 ),

@@ -12,7 +12,7 @@ class PostDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-//    post.isDetailCard = true;
+   post.isDetailCard = true;
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: NestedScrollView(

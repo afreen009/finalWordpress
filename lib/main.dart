@@ -1,13 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:wordpress_flutter/sign_up_widget.dart';
+import 'package:wordpress_flutter/pages/home.dart';
+import 'package:wordpress_flutter/pages/home_page.dart';
 import 'services/theme_changer.dart';
 import 'theme.dart';
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
-void main() => runApp(MyApp());
+  runApp(MyApp());
+}
+
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  static final String title = 'Google SignIn';
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<ThemeChanger>(
@@ -16,11 +23,11 @@ class MyApp extends StatelessWidget {
         final themeChanger = Provider.of<ThemeChanger>(context);
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          // title: TITLE,
+          title: title,
           themeMode: themeChanger.getTheme,
           darkTheme: Style.get(false),
           theme: Style.get(true),
-          home: SignUpWidget(),
+          home: HomeRoute(),
         );
       }),
     );

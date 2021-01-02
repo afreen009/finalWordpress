@@ -6,8 +6,9 @@ import '../widgets/post_list_item.dart';
 
 class PostsList extends StatefulWidget {
   int category = 0;
+  String baseurl;
 
-  PostsList({this.category = 0});
+  PostsList({this.category = 0,this.baseurl});
 
   @override
   _PostsListState createState() => _PostsListState();
@@ -27,7 +28,7 @@ class _PostsListState extends State<PostsList> {
         isLoading = true;
       });
 
-      WpApi.getPostsList(category: widget.category, page: page).then((_posts) {
+      WpApi.getPostsList(category: widget.category, page: page,baseurl: widget.baseurl).then((_posts) {
         setState(() {
           isLoading = false;
           posts.addAll(_posts);

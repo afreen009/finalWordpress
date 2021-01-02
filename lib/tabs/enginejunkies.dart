@@ -5,12 +5,12 @@ import 'package:wordpress_flutter/widgets/posts_list.dart';
 import '../config.dart';
 import 'listHeading.dart';
 
-class First extends StatefulWidget {
+class EngineJunkies extends StatefulWidget {
   @override
-  _FirstState createState() => _FirstState();
+  _EngineJunkiesState createState() => _EngineJunkiesState();
 }
 
-class _FirstState extends State<First> {
+class _EngineJunkiesState extends State<EngineJunkies> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,12 +21,12 @@ class _FirstState extends State<First> {
                   ListHeading(FEATURED_CATEGORY_TITLE, FEATURED_CATEGORY_ID),
                   Container(
                     height: 250.0,
-                    child: FeaturedCategoryList('http://festivalsofearth.com/',),
+                    child: FeaturedCategoryList('https://enginejunkies.com/'),
                   ),
                   ListHeading('Latest', 0),
                   Flexible(
                     fit: FlexFit.loose,
-                    child: PostsList(baseurl: 'http://festivalsofearth.com/',),
+                    child: PostsList(baseurl:'http://enginejunkies.com/'),
                   ),
                 ],
               ),
