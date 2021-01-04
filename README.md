@@ -72,3 +72,4 @@ Distributed under the GPL3 license.
 "# finalWordpress" 
 "# newBlog" 
 "# newBlog" 
+"# halfblog" 
