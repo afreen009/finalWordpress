@@ -21,7 +21,6 @@ These are he requirements to run this App
 ## Getting Started
 clone this repo
 ```
-git clone https://github.com/atiqsamtia/WordPress-App-with-Flutter.git wordpress_flutter
 ```
 Change <code>TITLE</code> and <code>URL</code> according to your website in <code>lib/config.dart</code> file.
 
@@ -54,22 +53,4 @@ It is that simple.
 - [ ] Splash screen 
 - [ ] Share and fav buttons 
 
-## Meta
 
-Atiq Samtia– [@AtiqSamtia](https://twitter.com/atiqsamtia) – me@atiqsamtia.com
-
-Distributed under the GPL3 license.
-
-[https://github.com/atiqsamtia/WordPress-App-with-Flutter](https://github.com/atiqsamtia/WordPress-App-with-Flutter)
-
-## Contributing
-
-1. Fork it (<https://github.com/atiqsamtia/WordPress-App-with-Flutter/fork>)
-2. Create your feature branch (`git checkout -b feature/fooBar`)
-3. Commit your changes (`git commit -am 'Add some fooBar'`)
-4. Push to the branch (`git push origin feature/fooBar`)
-5. Create a new Pull Request
-"# finalWordpress" 
-"# newBlog" 
-"# newBlog" 
-"# halfblog" 
